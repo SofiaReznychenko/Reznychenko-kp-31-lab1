@@ -1,9 +1,21 @@
-﻿namespace ConditionalAlgorithms;
+﻿using System.Transactions;
+using System;
+
+namespace ConditionalAlgorithms;
 
 public class Task1
 {
-    public (double x, double y) Calculate(double a, double b, double c)
+    public (double a, double b) Calculate(double x, double y, double z)
     {
-        throw new NotImplementedException();
+        
+        if (x == 0)
+            Console.WriteLine("Error x");
+        if (y == 0)
+            Console.WriteLine("Error y");
+        if (z == 0)
+            Console.WriteLine("Error z");
+        double a = (x * y * z) / Math.Sin(2 * x * y * z);
+        double b = 1 / (Math.Pow(a, 4) * Math.Sqrt(Math.Log(a + x * y)));
+        return (a, b);
     }
 }
